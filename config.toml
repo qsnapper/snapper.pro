@@ -1,0 +1,6 @@
+baseURL = "http://snapper.pro/"
+languageCode = "en-us"
+title = "snapper.pro"
+
+[markup.goldmark.renderer]
+unsafe = true

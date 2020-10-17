@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {{ $css := resources.Get "css/home.css" | resources.Minify | resources.Fingerprint }}
+    <link rel='stylesheet' type='text/css' media='screen' href='{{ $css.Permalink }}'>
+    {{ $js := resources.Get "js/track.js" | js.Build "track.js" | minify | fingerprint }}
+    <script type='text/javascript' src='{{ $js.Permalink }}'></script>
+</head>
+<body>
+    {{ block "main" . -}}{{- end }}
+</body>
+</html>
