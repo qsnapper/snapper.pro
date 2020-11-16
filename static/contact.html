@@ -77,10 +77,8 @@
           body: new URLSearchParams(formData).toString(),
         }).then((res) => {
           if (res) {
-            M.toast({
-              html: 'Thank you for your submission!',
-              classes: 'pulse',
-            });
+            console.log('sucessfully sent!');
+            document.getElementsByTagName('button')[0].innerHTML = 'Sent!';
           }
         });
       });
